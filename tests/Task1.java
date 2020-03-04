@@ -1,7 +1,7 @@
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import st1920.automaton.RegExpMatcher;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class Task1 {
 	@Test
@@ -45,6 +45,4 @@ public class Task1 {
 		String regex = "\"123\"";
 		assertTrue(RegExpMatcher.matches(test, regex));
 	}
-	
-	
 }
