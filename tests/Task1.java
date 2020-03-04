@@ -27,7 +27,7 @@ public class Task1 {
 	
 	@Test
 	public void zeroOrOne() {
-		String test = "hello";
+		String test = "hellohellohello";
 		String regex = "hello?";
 		assertFalse(RegExpMatcher.matches(test, regex));
 	}
