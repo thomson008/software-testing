@@ -40,7 +40,7 @@ public class Task1 {
 	}
 	
 	@Test
-	public void test6() {
+	public void quotedString() {
 		String test = "123";
 		String regex = "\"123\"";
 		assertTrue(RegExpMatcher.matches(test, regex));
