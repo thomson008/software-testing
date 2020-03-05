@@ -29,6 +29,7 @@
   <build>
     <sourceDirectory>src</sourceDirectory>
     <outputDirectory>build</outputDirectory>
+    <pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -116,5 +117,6 @@
         </configuration>
       </plugin>
     </plugins>
+    </pluginManagement>
   </build>
 </project>
