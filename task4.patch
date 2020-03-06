@@ -1,0 +1,35 @@
+diff --git a/build/st1920/automaton/RegExp.class b/build/st1920/automaton/RegExp.class
+index b03cae2..37b6010 100644
+Binary files a/build/st1920/automaton/RegExp.class and b/build/st1920/automaton/RegExp.class differ
+diff --git a/build/st1920/automaton/Task4.class b/build/st1920/automaton/Task4.class
+index b03dc82..bd7d1a5 100644
+Binary files a/build/st1920/automaton/Task4.class and b/build/st1920/automaton/Task4.class differ
+diff --git a/src/st1920/automaton/RegExp.java b/src/st1920/automaton/RegExp.java
+index 1290c85..8292c89 100644
+--- a/src/st1920/automaton/RegExp.java
++++ b/src/st1920/automaton/RegExp.java
+@@ -492,6 +492,13 @@ public class RegExp {
+ 		r.digits = digits;
+ 		return r;
+ 	}
++
++	private static RegExp makeNewline() {
++		RegExp newlineWindows = makeString("\r\n");
++		RegExp newlineUnix = makeString("\n");
++		RegExp newlineMac = makeString("\r");
++		return makeUnion(makeUnion(newlineMac, newlineUnix), newlineWindows);
++	}
+
+ 	private boolean peek(String s) {
+ 		return more() && s.indexOf(b.charAt(pos)) != -1;
+@@ -619,7 +626,9 @@ public class RegExp {
+ 	}
+
+ 	private final RegExp parseSimpleExp() throws IllegalArgumentException {
+-		if (match('.'))
++		if (match('$'))
++			return makeNewline();
++		else if (match('.'))
+ 			return makeAnyChar();
+ 		else if (check(EMPTY) && match('#'))
+ 			return makeEmpty();

@@ -1,0 +1,71 @@
+commit 380951f79dd62e9a530a4b78262ba383d247dc84
+Author: thomson008 <tkhorszczaruk@gmail.com>
+Date:   Fri Mar 6 15:56:55 2020 +0000
+
+    Implemented 6 tests for quite complicated patterns, to check how the new symbol behaves when combined with other symbols, as well as repetitions, unions and intersections
+
+M	build/st1920/automaton/Task4.class
+M	test/st1920/automaton/Task4.java
+
+commit dd8717c95fe31681e97677eba23239ff0f626612
+Author: thomson008 <tkhorszczaruk@gmail.com>
+Date:   Fri Mar 6 14:37:21 2020 +0000
+
+    Added three more advanced tests to check more complicated patterns. All passed
+
+M	build/st1920/automaton/Task4.class
+M	test/st1920/automaton/Task4.java
+
+commit 7bafc75e0383398dfe83c1859f485853866522f1
+Author: thomson008 <tkhorszczaruk@gmail.com>
+Date:   Fri Mar 6 14:21:50 2020 +0000
+
+    Added a test case for the example presented in coursework document: 'a\naaa\r\n' should match '(a+$)+'. Passed on first attempt
+
+M	build/st1920/automaton/Task4.class
+M	test/st1920/automaton/Task4.java
+
+commit d2bbf99ca0a8eaf4a76a35467175800d131876df
+Author: thomson008 <tkhorszczaruk@gmail.com>
+Date:   Fri Mar 6 14:09:12 2020 +0000
+
+    Implemented recognition of MacOS pattern indicating a newline, causing all three basic tests to pass
+
+M	build/st1920/automaton/RegExp.class
+M	src/st1920/automaton/RegExp.java
+
+commit 27527fd98e6179ac1d2469bc31af7658046a5fa6
+Author: thomson008 <tkhorszczaruk@gmail.com>
+Date:   Fri Mar 6 14:05:42 2020 +0000
+
+    Added handling for UNIX newline character, making the second test pass
+
+M	build/st1920/automaton/RegExp.class
+M	src/st1920/automaton/RegExp.java
+
+commit 26f39af6e2b6d962c2a91429b7815c5ff72a5f98
+Author: thomson008 <tkhorszczaruk@gmail.com>
+Date:   Fri Mar 6 13:57:35 2020 +0000
+
+    Implemented handling of Windows end-of-line character sequence, so now one of the test cases passes
+
+M	build/st1920/automaton/RegExp.class
+M	src/st1920/automaton/RegExp.java
+
+commit b7b42205cc7e0d45c9a7a38603811b8b1980260c
+Author: thomson008 <tkhorszczaruk@gmail.com>
+Date:   Fri Mar 6 13:52:36 2020 +0000
+
+    Added 3 basic test cases to verify whether each of the 3 possible newline character sequences matches the '$' regular expression
+
+M	build/st1920/automaton/Task4.class
+M	test/st1920/automaton/Task4.java
+
+commit 3b809717f777930589cc0feef039ca101a4855cf
+Author: thomson008 <tkhorszczaruk@gmail.com>
+Date:   Fri Mar 6 13:43:16 2020 +0000
+
+    Created a test suite to be filled with test cases for new functionality
+
+A	build/st1920/automaton/Task4.class
+A	test/st1920/automaton/Task4.java
