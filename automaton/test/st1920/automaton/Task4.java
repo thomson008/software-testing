@@ -1,11 +1,23 @@
 package st1920.automaton;
-
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class Task4 {
-
+	@Test
+	public void testUnix() {
+		assertTrue(RegExpMatcher.matches("\n", "$"));
+	}
+	
+	@Test
+	public void testWindows() {
+		assertTrue(RegExpMatcher.matches("\r\n", "$"));
+	}
+	
+	@Test
+	public void testMac() {
+		assertTrue(RegExpMatcher.matches("\r", "$"));
+	}
+	
 	@Test
 	public void testExample() {
 		assertTrue(RegExpMatcher.matches("a\naaa\r\n", "(a+$)+"));
@@ -13,64 +25,61 @@ public class Task4 {
 	
 	@Test
 	public void oneOrMore() {
-		String test = "\n\r\n\r";
-		String regex = "$+";
-		assertTrue(RegExpMatcher.matches(test, regex));
+		assertTrue(RegExpMatcher.matches("\n\r\n\r", "$+"));
 	}
 	
 	@Test
 	public void range() {
-		String test = "\n\r\n\n\r";
-		String regex = "${1,5}";
-		assertTrue(RegExpMatcher.matches(test, regex));
+		assertTrue(RegExpMatcher.matches("\n\r\n\n\r", "${1,5}"));
 	}
 	
 	@Test
 	public void zeroOrOne() {
-		String test = "\n\r\r";
-		String regex = "$?";
-		assertFalse(RegExpMatcher.matches(test, regex));
+		assertFalse(RegExpMatcher.matches("\n\r\r", "$?"));
 	}
 	
 	@Test
 	public void canBeBoth2or3() {
-		String test = "\r\n\n";
-		String regex = "${3}&${2}";
-		assertTrue(RegExpMatcher.matches(test, regex));
+		assertTrue(RegExpMatcher.matches("\r\n\n", "${3}&${2}"));
 	}
 	
 	@Test
 	public void zeroOrMore() {
-		String test = "hello";
-		String regex = "\"hello\"$*";
-		assertTrue(RegExpMatcher.matches(test, regex));
+		assertTrue(RegExpMatcher.matches("hello", "\"hello\"$*"));
 	}
 	
 	@Test
 	public void orAnotherPattern() {
-		String test = "\n\n\r\r\n";
-		String regex = "$+|test";
-		assertTrue(RegExpMatcher.matches(test, regex));
+		assertTrue(RegExpMatcher.matches("\n\n\r\r\n", "$+|test"));
 	}
 	
 	@Test
 	public void betweenWords() {
-		String test = "hello\nworld\r\n!";
-		String regex = "[a-z]+$\"world\"$!";
-		assertTrue(RegExpMatcher.matches(test, regex));
+		assertTrue(RegExpMatcher.matches("hello\nworld\r\n!", "[a-z]+$\"world\"$!"));
 	}
 	
 	@Test
 	public void wrongOrder() {
-		String test = "hello\n\rworld";
-		String regex = "\"hello\"$[a-zA-Z0-9]+";
-		assertFalse(RegExpMatcher.matches(test, regex));
+		assertFalse(RegExpMatcher.matches("hello\n\rworld", "\"hello\"$[a-zA-Z0-9]+"));
 	}
 	
 	@Test
 	public void moreThanFive() {
-		String test = "\n\r\r\n";
-		String regex = "${5,}";
-		assertFalse(RegExpMatcher.matches(test, regex));
+		assertFalse(RegExpMatcher.matches("\n\r\r\n", "${5,}"));
+	}
+	
+	@Test
+	public void empty() {
+		assertFalse(RegExpMatcher.matches("", "$"));
+	}
+	
+	@Test
+	public void noNewline() {
+		assertFalse(RegExpMatcher.matches("aaaa.bbbb\\*^5", "($+)*"));
+	}
+	
+	@Test
+	public void surroundingWords() {
+		assertTrue(RegExpMatcher.matches("\n\raaa.b\r\n", "$$a+.[a-z]${2,}"));
 	}
 }
