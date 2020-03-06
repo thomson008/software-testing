@@ -17,7 +17,6 @@ public class RegExpMatcher {
 		return a.run(m);
 	}
 
-	/*
 	public static String makeAlpha() {
 		Random rnd = new Random();
 		final String alphanum = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -48,5 +47,4 @@ public class RegExpMatcher {
 	public static String makeConcatenation(String l, String r) {
 		return l + r;
 	}
-	 */
 }

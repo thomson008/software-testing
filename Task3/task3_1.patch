@@ -1,0 +1,40 @@
+diff --git a/RegExpMatcherOri.java b/RegExpMatcher.java
+index 214225d..79384e5 100644
+--- a/RegExpMatcherOri.java
++++ b/RegExpMatcher.java
+@@ -16,4 +16,35 @@ public class RegExpMatcher {
+ 		Automaton a = regExp.toAutomaton();
+ 		return a.run(m);
+ 	}
++
++	public static String makeAlpha() {
++		Random rnd = new Random();
++		final String alphanum = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
++	    return Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length())));
++	}
++	public static String makeSpecial() {
++		Random rnd = new Random();
++		final String alphanum = "!@#$%^&*+?";
++		return Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length())));
++	}
++	public static String makeRange() {
++		Random rnd = new Random();
++		return String.format("<%d-%d>", rnd.nextInt(100), rnd.nextInt(100));
++	}
++	public static String makeRepeat1() {
++		Random rnd = new Random();
++		return String.format("{%d,%d}", rnd.nextInt(100), rnd.nextInt(100));
++	}
++	public static String makeRepeat2() {
++		Random rnd = new Random();
++		return String.format("{%d,}", rnd.nextInt(100));
++	}
++	public static String makeRepeat3() {
++		Random rnd = new Random();
++		return String.format("{%d}", rnd.nextInt(100));
++	}
++
++	public static String makeConcatenation(String l, String r) {
++		return l + r;
++	}
+ }
