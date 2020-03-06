@@ -492,6 +492,13 @@ public class RegExp {
 		r.digits = digits;
 		return r;
 	}
+	
+	private static RegExp makeNewline() {
+		RegExp newlineWindows = makeString("\r\n");
+		RegExp newlineUnix = makeString("\n");
+		RegExp newlineMac = makeString("\r");
+		return makeUnion(makeUnion(newlineMac, newlineUnix), newlineWindows);
+	}
 
 	private boolean peek(String s) {
 		return more() && s.indexOf(b.charAt(pos)) != -1;
@@ -619,7 +626,9 @@ public class RegExp {
 	}
 
 	private final RegExp parseSimpleExp() throws IllegalArgumentException {
-		if (match('.'))
+		if (match('$'))
+			return makeNewline();
+		else if (match('.'))
 			return makeAnyChar();
 		else if (check(EMPTY) && match('#'))
 			return makeEmpty();

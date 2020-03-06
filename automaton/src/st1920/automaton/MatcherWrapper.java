@@ -11,7 +11,7 @@ public class MatcherWrapper {
     }
 
     public static REString makeDigit() {
-    	return new REString("9");
+    	return new REString("8");
     }
 
     public static REString makeConcatenation(REString pattern1, REString pattern2) {
@@ -39,7 +39,7 @@ public class MatcherWrapper {
     }
 
     public static REString makeEntireString() {
-    	return new REString("\"teststring\"");
+    	return new REString("\"aaa\"");
     }
 
     public static REString makeAnyString() {
@@ -69,6 +69,10 @@ public class MatcherWrapper {
     public static REString makeWildcard() {
     	return new REString(".");
     }
+    
+    public static REString makeSpecialCharacter() {
+    	return new REString("\\%");
+    }
 
     // Methods for generating standard match strings
     public static MatchString makeAlphabet() {
@@ -76,10 +80,14 @@ public class MatcherWrapper {
     }
 
     public static MatchString makeNum() {
-    	return new MatchString("1");
+    	return new MatchString("8");
     }
 
     public static MatchString makeConcatenation(MatchString l, MatchString r) {
     	return new MatchString(l.getString() + r.getString());
+    }
+    
+    public static MatchString makeSpecialChar() {
+    	return new MatchString("%");
     }
 }
