@@ -11,1338 +11,892 @@ public class RegressionTest0 {
     public void test01() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test01");
-        st1920.automaton.REString rEString0 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatZeroOrOne(rEString0);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        java.lang.String str0 = st1920.automaton.RegExpMatcher.makeSpecial();
+        // Regression assertion (captures the current behavior of the code)
+// flaky:         org.junit.Assert.assertTrue("'" + str0 + "' != '" + "!" + "'", str0.equals("!"));
     }
 
     @Test
     public void test02() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test02");
-        st1920.automaton.MatchString matchString0 = null;
-        st1920.automaton.MatchString matchString1 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        java.lang.String str0 = st1920.automaton.RegExpMatcher.makeRange();
+        // Regression assertion (captures the current behavior of the code)
+// flaky:         org.junit.Assert.assertTrue("'" + str0 + "' != '" + "<98-23>" + "'", str0.equals("<98-23>"));
     }
 
     @Test
     public void test03() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test03");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.REString rEString1 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            boolean boolean2 = st1920.automaton.MatcherWrapper.matches(matchString0, rEString1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        java.lang.String str0 = st1920.automaton.RegExpMatcher.makeRepeat1();
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
+// flaky:         org.junit.Assert.assertTrue("'" + str0 + "' != '" + "{79,36}" + "'", str0.equals("{79,36}"));
     }
 
     @Test
     public void test04() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test04");
-        st1920.automaton.MatcherWrapper matcherWrapper0 = new st1920.automaton.MatcherWrapper();
-        java.lang.Class<?> wildcardClass1 = matcherWrapper0.getClass();
+        java.lang.String str0 = st1920.automaton.RegExpMatcher.makeRepeat2();
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass1);
+// flaky:         org.junit.Assert.assertTrue("'" + str0 + "' != '" + "{78,}" + "'", str0.equals("{78,}"));
     }
 
     @Test
     public void test05() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test05");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeAlpha();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString0);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("<98-23>", "{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test06() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test06");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeWildcard();
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("!", "{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test07() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test07");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeAlpha();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString0);
-        java.lang.String str3 = rEString2.getRegex();
+        java.lang.String str0 = st1920.automaton.RegExpMatcher.makeAlpha();
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str3 + "' != '" + "a+" + "'", str3.equals("a+"));
+// flaky:         org.junit.Assert.assertTrue("'" + str0 + "' != '" + "F" + "'", str0.equals("F"));
     }
 
     @Test
     public void test08() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test08");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString2, matchString5);
-        java.lang.Class<?> wildcardClass7 = matchString5.getClass();
+        java.lang.String str0 = st1920.automaton.RegExpMatcher.makeRepeat3();
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass7);
+// flaky:         org.junit.Assert.assertTrue("'" + str0 + "' != '" + "{48}" + "'", str0.equals("{48}"));
     }
 
     @Test
     public void test09() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test09");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeNumberRange();
-        java.lang.Class<?> wildcardClass1 = rEString0.getClass();
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{78,}", "{79,36}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass1);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test10() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test10");
-        st1920.automaton.REString rEString0 = null;
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeNumberRange();
-        // The following exception was thrown during execution in test generation
-        try {
-            st1920.automaton.REString rEString2 = st1920.automaton.REString.makeConcatenation(rEString0, rEString1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("", "{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test11() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test11");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeDigit();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeNegation(rEString0);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test12() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test12");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeAnyString();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeNegation(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeNegation(rEString1);
-        st1920.automaton.REString rEString3 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            st1920.automaton.REString rEString4 = st1920.automaton.REString.makeAnd(rEString2, rEString3);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{78,}", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{78,}" + "'", str2.equals("{78,}"));
     }
 
     @Test
     public void test13() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test13");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeNoneString();
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F", "{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F{78,}" + "'", str2.equals("F{78,}"));
     }
 
     @Test
     public void test14() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test14");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeLetterRange();
-        java.lang.String str1 = rEString0.getRegex();
+        st1920.automaton.RegExpMatcher regExpMatcher0 = new st1920.automaton.RegExpMatcher();
+        java.lang.Class<?> wildcardClass1 = regExpMatcher0.getClass();
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str1 + "' != '" + "[a-zA-z]" + "'", str1.equals("[a-zA-z]"));
+        org.junit.Assert.assertNotNull(wildcardClass1);
     }
 
     @Test
     public void test15() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test15");
-        st1920.automaton.MatchString matchString0 = null;
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString1, matchString2);
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString4, matchString5);
-        st1920.automaton.MatchString matchString7 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString5);
-        // The following exception was thrown during execution in test generation
-        try {
-            st1920.automaton.MatchString matchString8 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString7);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{48}", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString7);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{48}" + "'", str2.equals("{48}"));
     }
 
     @Test
     public void test16() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test16");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeAnyString();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRangeOfOccurences(rEString0);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F", "{48}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F{48}" + "'", str2.equals("F{48}"));
     }
 
     @Test
     public void test17() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test17");
-        st1920.automaton.MatchString matchString0 = null;
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString1, matchString2);
-        // The following exception was thrown during execution in test generation
-        try {
-            st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        java.lang.Object obj0 = new java.lang.Object();
+        java.lang.Class<?> wildcardClass1 = obj0.getClass();
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
+        org.junit.Assert.assertNotNull(wildcardClass1);
     }
 
     @Test
     public void test18() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test18");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeSpecialCharacter();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeNegation(rEString0);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeNegation(rEString2);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F", "!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F!" + "'", str2.equals("F!"));
     }
 
     @Test
     public void test19() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test19");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str2 = rEString1.getRegex();
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString4 = st1920.automaton.REString.makeConcatenation(rEString1, rEString3);
-        st1920.automaton.REString rEString5 = st1920.automaton.REString.makeOr(rEString0, rEString1);
-        st1920.automaton.REString rEString7 = new st1920.automaton.REString("");
-        st1920.automaton.REString rEString8 = st1920.automaton.REString.makeAnd(rEString1, rEString7);
-        st1920.automaton.REString rEString9 = st1920.automaton.REString.makeNegation(rEString8);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F{78,}", "F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "\"aaa\"" + "'", str2.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString9);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F{78,}F{78,}" + "'", str2.equals("F{78,}F{78,}"));
     }
 
     @Test
     public void test20() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test20");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeLetterRange();
-        java.lang.Class<?> wildcardClass1 = rEString0.getClass();
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>", "F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass1);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F" + "'", str2.equals("<98-23>F"));
     }
 
     @Test
     public void test21() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test21");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString7 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString8 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString6, matchString7);
-        st1920.automaton.MatchString matchString9 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString5, matchString8);
-        st1920.automaton.MatchString matchString10 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString8);
-        st1920.automaton.MatchString matchString11 = null;
-        // The following exception was thrown during execution in test generation
-        try {
-            st1920.automaton.MatchString matchString12 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString11);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F", "hi!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString9);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString10);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test22() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test22");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str4 = rEString3.getRegex();
-        st1920.automaton.REString rEString5 = st1920.automaton.REString.makeNegation(rEString3);
-        boolean boolean6 = st1920.automaton.MatcherWrapper.matches(matchString2, rEString5);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F!", "<98-23>F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str4 + "' != '" + "\"aaa\"" + "'", str4.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test23() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test23");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString7 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString8 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString6, matchString7);
-        st1920.automaton.MatchString matchString9 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString10 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString11 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString9, matchString10);
-        st1920.automaton.MatchString matchString12 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString8, matchString11);
-        st1920.automaton.MatchString matchString13 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString11);
-        st1920.automaton.MatchString matchString14 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString11);
-        st1920.automaton.REString rEString15 = st1920.automaton.REString.makeAlpha();
-        st1920.automaton.REString rEString16 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString15);
-        st1920.automaton.REString rEString17 = st1920.automaton.REString.makeRepeatZeroOrOne(rEString16);
-        boolean boolean18 = st1920.automaton.MatcherWrapper.matches(matchString0, rEString17);
-        st1920.automaton.REString rEString19 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString17);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F!", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString9);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString10);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString11);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString12);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString13);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString14);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString15);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString16);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString17);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + true + "'", boolean18 == true);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString19);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F!" + "'", str2.equals("F!"));
     }
 
     @Test
     public void test24() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test24");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str4 = rEString3.getRegex();
-        st1920.automaton.REString rEString5 = st1920.automaton.REString.makeNegation(rEString3);
-        boolean boolean6 = st1920.automaton.MatcherWrapper.matches(matchString1, rEString5);
-        java.lang.Class<?> wildcardClass7 = rEString5.getClass();
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{78,}", "<98-23>");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str4 + "' != '" + "\"aaa\"" + "'", str4.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass7);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test25() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test25");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString2, matchString5);
-        st1920.automaton.MatchString matchString7 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString8 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString9 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString7, matchString8);
-        st1920.automaton.MatchString matchString10 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString11 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString12 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString10, matchString11);
-        st1920.automaton.MatchString matchString13 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString9, matchString12);
-        st1920.automaton.MatchString matchString14 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString6, matchString12);
-        st1920.automaton.REString rEString15 = st1920.automaton.REString.makeAnyString();
-        st1920.automaton.REString rEString16 = st1920.automaton.REString.makeNegation(rEString15);
-        boolean boolean17 = st1920.automaton.MatcherWrapper.matches(matchString14, rEString16);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("<98-23>", "F{48}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString9);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString10);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString11);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString12);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString13);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString14);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString15);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString16);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean17 + "' != '" + false + "'", boolean17 == false);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test26() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test26");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeSpecialCharacter();
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString1);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeAnd(rEString0, rEString2);
-        st1920.automaton.REString rEString4 = st1920.automaton.REString.makeRepeatZeroOrOne(rEString3);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{78,}", "F{78,}F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString4);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{78,}F{78,}F{78,}" + "'", str2.equals("{78,}F{78,}F{78,}"));
     }
 
     @Test
     public void test27() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test27");
-        st1920.automaton.REString rEString1 = new st1920.automaton.REString("hi!");
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeNegation(rEString1);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>", "F{78,}F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F{78,}F{78,}" + "'", str2.equals("<98-23>F{78,}F{78,}"));
     }
 
     @Test
     public void test28() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test28");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString2, matchString4);
-        st1920.automaton.REString rEString7 = st1920.automaton.REString.makeDigit();
-        boolean boolean8 = st1920.automaton.MatcherWrapper.matches(matchString6, rEString7);
-        java.lang.String str9 = rEString7.getRegex();
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F{78,}", "hi!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean8 + "' != '" + false + "'", boolean8 == false);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str9 + "' != '" + "8" + "'", str9.equals("8"));
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test29() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test29");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeAlpha();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString0);
-        java.lang.Class<?> wildcardClass2 = rEString1.getClass();
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{79,36}", "<98-23>F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass2);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test30() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test30");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str1 = rEString0.getRegex();
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeNegation(rEString0);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString4 = st1920.automaton.REString.makeSpecialCharacter();
-        st1920.automaton.REString rEString5 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString4);
-        st1920.automaton.REString rEString6 = st1920.automaton.REString.makeAnd(rEString3, rEString5);
-        st1920.automaton.REString rEString7 = st1920.automaton.REString.makeOr(rEString2, rEString3);
-        java.lang.String str8 = rEString7.getRegex();
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{78,}F{78,}F{78,}", "F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str1 + "' != '" + "\"aaa\"" + "'", str1.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str8 + "' != '" + "~\"aaa\"|\"aaa\"" + "'", str8.equals("~\"aaa\"|\"aaa\""));
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{78,}F{78,}F{78,}F{78,}" + "'", str2.equals("{78,}F{78,}F{78,}F{78,}"));
     }
 
     @Test
     public void test31() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test31");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeAlpha();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRepeatZeroOrOne(rEString1);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeNegation(rEString2);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("!", "F!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "!F!" + "'", str2.equals("!F!"));
     }
 
     @Test
     public void test32() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test32");
-        st1920.automaton.REString rEString1 = new st1920.automaton.REString("a+");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{78,}F{78,}F{78,}F{78,}", "F{78,}F{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test33() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test33");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeSpecialCharacter();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRangeOfOccurences(rEString0);
-        java.lang.String str2 = rEString0.getRegex();
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("hi!", "F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "\\%" + "'", str2.equals("\\%"));
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "hi!F{78,}" + "'", str2.equals("hi!F{78,}"));
     }
 
     @Test
     public void test34() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test34");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeSpecialCharacter();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeAlpha();
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString2);
-        st1920.automaton.REString rEString4 = st1920.automaton.REString.makeConcatenation(rEString0, rEString3);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("", "F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString4);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F" + "'", str2.equals("F"));
     }
 
     @Test
     public void test35() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test35");
-        st1920.automaton.REString rEString0 = null;
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeAlpha();
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString1);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeRepeatZeroOrOne(rEString2);
-        st1920.automaton.REString rEString4 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString5 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str6 = rEString5.getRegex();
-        st1920.automaton.REString rEString7 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString8 = st1920.automaton.REString.makeConcatenation(rEString5, rEString7);
-        st1920.automaton.REString rEString9 = st1920.automaton.REString.makeOr(rEString4, rEString5);
-        st1920.automaton.REString rEString10 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString9);
-        st1920.automaton.REString rEString11 = st1920.automaton.REString.makeConcatenation(rEString2, rEString10);
-        // The following exception was thrown during execution in test generation
-        try {
-            st1920.automaton.REString rEString12 = st1920.automaton.REString.makeOr(rEString0, rEString2);
-            org.junit.Assert.fail("Expected exception of type java.lang.NullPointerException; message: null");
-        } catch (java.lang.NullPointerException e) {
-        // Expected exception.
-        }
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>F{78,}F{78,}", "<98-23>F{78,}F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str6 + "' != '" + "\"aaa\"" + "'", str6.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString9);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString10);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString11);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}" + "'", str2.equals("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}"));
     }
 
     @Test
     public void test36() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test36");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeLetterRange();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeNegation(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRangeOfOccurences(rEString0);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{78,}F{78,}F{78,}F{78,}", "F!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test37() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test37");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString7 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString8 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString6, matchString7);
-        st1920.automaton.MatchString matchString9 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString10 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString11 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString9, matchString10);
-        st1920.automaton.MatchString matchString12 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString13 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString14 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString12, matchString13);
-        st1920.automaton.MatchString matchString15 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString11, matchString14);
-        st1920.automaton.MatchString matchString16 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString6, matchString14);
-        st1920.automaton.MatchString matchString17 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString14);
-        st1920.automaton.REString rEString18 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString19 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str20 = rEString19.getRegex();
-        st1920.automaton.REString rEString21 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString22 = st1920.automaton.REString.makeConcatenation(rEString19, rEString21);
-        st1920.automaton.REString rEString23 = st1920.automaton.REString.makeOr(rEString18, rEString19);
-        boolean boolean24 = st1920.automaton.MatcherWrapper.matches(matchString17, rEString19);
-        st1920.automaton.MatchString matchString25 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString2, matchString17);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("", "{48}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString9);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString10);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString11);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString12);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString13);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString14);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString15);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString16);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString17);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString18);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString19);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str20 + "' != '" + "\"aaa\"" + "'", str20.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString21);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString22);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString23);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean24 + "' != '" + false + "'", boolean24 == false);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString25);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test38() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test38");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeDigit();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRepeatZeroOrOne(rEString0);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString0);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("<98-23>F{78,}F{78,}", "!F!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test39() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test39");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString7 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString8 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString6, matchString7);
-        st1920.automaton.MatchString matchString9 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString5, matchString8);
-        st1920.automaton.MatchString matchString10 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString8);
-        st1920.automaton.REString rEString11 = st1920.automaton.REString.makeAnyString();
-        st1920.automaton.REString rEString12 = st1920.automaton.REString.makeNegation(rEString11);
-        st1920.automaton.REString rEString13 = st1920.automaton.REString.makeNegation(rEString12);
-        boolean boolean14 = st1920.automaton.MatcherWrapper.matches(matchString10, rEString12);
-        st1920.automaton.REString rEString15 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str16 = rEString15.getRegex();
-        st1920.automaton.REString rEString17 = st1920.automaton.REString.makeNegation(rEString15);
-        st1920.automaton.REString rEString18 = st1920.automaton.REString.makeOr(rEString12, rEString15);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{79,36}", "{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString9);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString10);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString11);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString12);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString13);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean14 + "' != '" + false + "'", boolean14 == false);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString15);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str16 + "' != '" + "\"aaa\"" + "'", str16.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString17);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString18);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test40() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test40");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str2 = rEString1.getRegex();
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString4 = st1920.automaton.REString.makeConcatenation(rEString1, rEString3);
-        st1920.automaton.REString rEString5 = st1920.automaton.REString.makeOr(rEString0, rEString1);
-        st1920.automaton.REString rEString6 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString5);
-        st1920.automaton.REString rEString7 = st1920.automaton.REString.makeRangeOfOccurences(rEString6);
-        java.lang.Class<?> wildcardClass8 = rEString7.getClass();
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}", "F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "\"aaa\"" + "'", str2.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass8);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F" + "'", str2.equals("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F"));
     }
 
     @Test
     public void test41() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test41");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeSpecialCharacter();
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRepeatOnceOrMore(rEString1);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeAnd(rEString0, rEString2);
-        java.lang.Class<?> wildcardClass4 = rEString2.getClass();
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("hi!F{78,}", "hi!F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass4);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test42() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test42");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str4 = rEString3.getRegex();
-        st1920.automaton.REString rEString5 = st1920.automaton.REString.makeNegation(rEString3);
-        boolean boolean6 = st1920.automaton.MatcherWrapper.matches(matchString1, rEString5);
-        java.lang.Class<?> wildcardClass7 = matchString1.getClass();
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("", "<98-23>F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str4 + "' != '" + "\"aaa\"" + "'", str4.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean6 + "' != '" + true + "'", boolean6 == true);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(wildcardClass7);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F" + "'", str2.equals("<98-23>F"));
     }
 
     @Test
     public void test43() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test43");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString7 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString8 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString6, matchString7);
-        st1920.automaton.MatchString matchString9 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString5, matchString8);
-        st1920.automaton.MatchString matchString10 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString8);
-        st1920.automaton.REString rEString11 = st1920.automaton.REString.makeAnyString();
-        st1920.automaton.REString rEString12 = st1920.automaton.REString.makeNegation(rEString11);
-        st1920.automaton.REString rEString13 = st1920.automaton.REString.makeNegation(rEString12);
-        boolean boolean14 = st1920.automaton.MatcherWrapper.matches(matchString10, rEString12);
-        st1920.automaton.REString rEString15 = st1920.automaton.REString.makeRepeatZeroOrOne(rEString12);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}", "F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString9);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString10);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString11);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString12);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString13);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean14 + "' != '" + false + "'", boolean14 == false);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString15);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test44() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test44");
-        st1920.automaton.REString rEString0 = st1920.automaton.REString.makeAnyString();
-        st1920.automaton.REString rEString1 = st1920.automaton.REString.makeNegation(rEString0);
-        st1920.automaton.REString rEString2 = st1920.automaton.REString.makeRangeOfOccurences(rEString0);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeRangeOfOccurences(rEString2);
-        st1920.automaton.REString rEString4 = st1920.automaton.REString.makeRangeOfOccurences(rEString3);
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("<98-23>", "!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString4);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test45() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test45");
-        st1920.automaton.REString rEString1 = new st1920.automaton.REString("[a-zA-z]");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("!F!", "{78,}F{78,}F{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
     }
 
     @Test
     public void test46() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test46");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.REString rEString3 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString4 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str5 = rEString4.getRegex();
-        st1920.automaton.REString rEString6 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString7 = st1920.automaton.REString.makeConcatenation(rEString4, rEString6);
-        st1920.automaton.REString rEString8 = st1920.automaton.REString.makeOr(rEString3, rEString4);
-        boolean boolean9 = st1920.automaton.MatcherWrapper.matches(matchString1, rEString8);
-        st1920.automaton.REString rEString10 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str11 = rEString10.getRegex();
-        st1920.automaton.REString rEString12 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString13 = st1920.automaton.REString.makeConcatenation(rEString10, rEString12);
-        st1920.automaton.REString rEString14 = st1920.automaton.REString.makeNegation(rEString10);
-        st1920.automaton.REString rEString15 = st1920.automaton.REString.makeOr(rEString8, rEString10);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F{78,}F{78,}", "hi!F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str5 + "' != '" + "\"aaa\"" + "'", str5.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean9 + "' != '" + false + "'", boolean9 == false);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString10);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str11 + "' != '" + "\"aaa\"" + "'", str11.equals("\"aaa\""));
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString12);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString13);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString14);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString15);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F{78,}F{78,}hi!F{78,}" + "'", str2.equals("F{78,}F{78,}hi!F{78,}"));
     }
 
     @Test
     public void test47() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test47");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString7 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString8 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString6, matchString7);
-        st1920.automaton.MatchString matchString9 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString10 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString11 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString9, matchString10);
-        st1920.automaton.MatchString matchString12 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString8, matchString11);
-        st1920.automaton.MatchString matchString13 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString11);
-        st1920.automaton.MatchString matchString14 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString1, matchString3);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("hi!", "<98-23>F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString7);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString8);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString9);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString10);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString11);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString12);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString13);
-        // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString14);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "hi!<98-23>F" + "'", str2.equals("hi!<98-23>F"));
     }
 
     @Test
     public void test48() throws Throwable {
         if (debug)
             System.out.format("%n%s%n", "RegressionTest0.test48");
-        st1920.automaton.MatchString matchString0 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString1 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString2 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString0, matchString1);
-        st1920.automaton.MatchString matchString3 = st1920.automaton.MatcherWrapper.makeAlphabet();
-        st1920.automaton.MatchString matchString4 = st1920.automaton.MatcherWrapper.makeSpecialChar();
-        st1920.automaton.MatchString matchString5 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString3, matchString4);
-        st1920.automaton.MatchString matchString6 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString2, matchString5);
-        st1920.automaton.REString rEString7 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString8 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str9 = rEString8.getRegex();
-        st1920.automaton.REString rEString10 = st1920.automaton.REString.makeEntireString();
-        st1920.automaton.REString rEString11 = st1920.automaton.REString.makeConcatenation(rEString8, rEString10);
-        st1920.automaton.REString rEString12 = st1920.automaton.REString.makeOr(rEString7, rEString8);
-        st1920.automaton.REString rEString13 = st1920.automaton.REString.makeRepeatZeroOrMore(rEString12);
-        st1920.automaton.REString rEString14 = st1920.automaton.REString.makeEntireString();
-        java.lang.String str15 = rEString14.getRegex();
-        st1920.automaton.REString rEString16 = st1920.automaton.REString.makeNegation(rEString14);
-        st1920.automaton.REString rEString17 = st1920.automaton.REString.makeAnd(rEString12, rEString16);
-        boolean boolean18 = st1920.automaton.MatcherWrapper.matches(matchString2, rEString16);
-        st1920.automaton.MatchString matchString19 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString20 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString21 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString19, matchString20);
-        st1920.automaton.MatchString matchString22 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString23 = st1920.automaton.MatcherWrapper.makeNum();
-        st1920.automaton.MatchString matchString24 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString22, matchString23);
-        st1920.automaton.MatchString matchString25 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString21, matchString23);
-        st1920.automaton.MatchString matchString26 = st1920.automaton.MatcherWrapper.makeConcatenation(matchString2, matchString21);
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F!", "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString0);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}" + "'", str2.equals("F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}"));
+    }
+
+    @Test
+    public void test49() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test49");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{78,}F{78,}F{78,}", "!F!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString1);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{78,}F{78,}F{78,}!F!" + "'", str2.equals("{78,}F{78,}F{78,}!F!"));
+    }
+
+    @Test
+    public void test50() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test50");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("hi!", "{79,36}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString2);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "hi!{79,36}" + "'", str2.equals("hi!{79,36}"));
+    }
+
+    @Test
+    public void test51() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test51");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{79,36}", "F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString3);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{79,36}F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}" + "'", str2.equals("{79,36}F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}"));
+    }
+
+    @Test
+    public void test52() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test52");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F!", "hi!{79,36}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString4);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F!hi!{79,36}" + "'", str2.equals("F!hi!{79,36}"));
+    }
+
+    @Test
+    public void test53() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test53");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F{48}", "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString5);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F" + "'", str2.equals("F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F"));
+    }
+
+    @Test
+    public void test54() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test54");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{48}", "{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString6);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test55() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test55");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("hi!", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString7);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "hi!" + "'", str2.equals("hi!"));
+    }
+
+    @Test
+    public void test56() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test56");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{78,}F{78,}F{78,}F{78,}", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString8);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{78,}F{78,}F{78,}F{78,}" + "'", str2.equals("{78,}F{78,}F{78,}F{78,}"));
+    }
+
+    @Test
+    public void test57() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test57");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{78,}F{78,}F{78,}!F!", "!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str9 + "' != '" + "\"aaa\"" + "'", str9.equals("\"aaa\""));
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test58() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test58");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("hi!F{78,}", "hi!{79,36}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString10);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test59() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test59");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>", "<98-23>");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString11);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23><98-23>" + "'", str2.equals("<98-23><98-23>"));
+    }
+
+    @Test
+    public void test60() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test60");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F!hi!{79,36}", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString12);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test61() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test61");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}", "F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString13);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F" + "'", str2.equals("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F"));
+    }
+
+    @Test
+    public void test62() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test62");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("", "!F!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString14);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "!F!" + "'", str2.equals("!F!"));
+    }
+
+    @Test
+    public void test63() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test63");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{79,36}", "F{78,}F{78,}hi!F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + str15 + "' != '" + "\"aaa\"" + "'", str15.equals("\"aaa\""));
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test64() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test64");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("hi!{79,36}", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString16);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "hi!{79,36}" + "'", str2.equals("hi!{79,36}"));
+    }
+
+    @Test
+    public void test65() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test65");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F{78,}", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(rEString17);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F{78,}" + "'", str2.equals("F{78,}"));
+    }
+
+    @Test
+    public void test66() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test66");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F!", "F{78,}F{78,}hi!F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertTrue("'" + boolean18 + "' != '" + true + "'", boolean18 == true);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test67() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test67");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F", "F!");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString19);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test68() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test68");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("", "F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString20);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F{78,}" + "'", str2.equals("F{78,}"));
+    }
+
+    @Test
+    public void test69() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test69");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>F", "F{78,}F{78,}hi!F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString21);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>FF{78,}F{78,}hi!F{78,}" + "'", str2.equals("<98-23>FF{78,}F{78,}hi!F{78,}"));
+    }
+
+    @Test
+    public void test70() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test70");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{48}", "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString22);
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test71() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test71");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{48}", "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString23);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F" + "'", str2.equals("{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F"));
+    }
+
+    @Test
+    public void test72() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test72");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("hi!{79,36}", "F{48}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString24);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "hi!{79,36}F{48}" + "'", str2.equals("hi!{79,36}F{48}"));
+    }
+
+    @Test
+    public void test73() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test73");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>FF{78,}F{78,}hi!F{78,}", "");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString25);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>FF{78,}F{78,}hi!F{78,}" + "'", str2.equals("<98-23>FF{78,}F{78,}hi!F{78,}"));
+    }
+
+    @Test
+    public void test74() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test74");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F", "F{78,}");
         // Regression assertion (captures the current behavior of the code)
-        org.junit.Assert.assertNotNull(matchString26);
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "FF{78,}" + "'", str2.equals("FF{78,}"));
+    }
+
+    @Test
+    public void test75() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test75");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{78,}", "hi!F{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test76() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test76");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F", "F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test77() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test77");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F", "hi!{79,36}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}Fhi!{79,36}" + "'", str2.equals("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}Fhi!{79,36}"));
+    }
+
+    @Test
+    public void test78() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test78");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{78,}F{78,}F{78,}", "{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test79() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test79");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("<98-23>", "hi!<98-23>F");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test80() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test80");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F!hi!{79,36}", "<98-23>");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F!hi!{79,36}<98-23>" + "'", str2.equals("F!hi!{79,36}<98-23>"));
+    }
+
+    @Test
+    public void test81() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test81");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}", "{48}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}{48}" + "'", str2.equals("F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}{48}"));
+    }
+
+    @Test
+    public void test82() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test82");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F!hi!{79,36}<98-23>", "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test83() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test83");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F", "F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test84() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test84");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F!hi!{79,36}<98-23>", "{48}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F!hi!{79,36}<98-23>{48}" + "'", str2.equals("F!hi!{79,36}<98-23>{48}"));
+    }
+
+    @Test
+    public void test85() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test85");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("!", "<98-23>FF{78,}F{78,}hi!F{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test86() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test86");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>F", "");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F" + "'", str2.equals("<98-23>F"));
+    }
+
+    @Test
+    public void test87() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test87");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{78,}", "hi!");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test88() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test88");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F", "F!hi!{79,36}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test89() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test89");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F{48}", "F!");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test90() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test90");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}{48}", "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}" + "'", str2.equals("F!<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}"));
+    }
+
+    @Test
+    public void test91() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test91");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F", "FF{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test92() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test92");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("hi!<98-23>F", "hi!F{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "hi!<98-23>Fhi!F{78,}" + "'", str2.equals("hi!<98-23>Fhi!F{78,}"));
+    }
+
+    @Test
+    public void test93() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test93");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F", "F{48}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test94() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test94");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("hi!F{78,}", "F!hi!{79,36}<98-23>");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test95() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test95");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F{48}", "F!hi!{79,36}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test96() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test96");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F", "<98-23>FF{78,}F{78,}hi!F{78,}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F<98-23>FF{78,}F{78,}hi!F{78,}" + "'", str2.equals("<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F<98-23>FF{78,}F{78,}hi!F{78,}"));
+    }
+
+    @Test
+    public void test97() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test97");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("!", "{48}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test98() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test98");
+        boolean boolean2 = st1920.automaton.RegExpMatcher.matches("F!", "{48}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}F");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + boolean2 + "' != '" + false + "'", boolean2 == false);
+    }
+
+    @Test
+    public void test99() throws Throwable {
+        if (debug)
+            System.out.format("%n%s%n", "RegressionTest0.test99");
+        java.lang.String str2 = st1920.automaton.RegExpMatcher.makeConcatenation("{78,}", "<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}Fhi!{79,36}");
+        // Regression assertion (captures the current behavior of the code)
+        org.junit.Assert.assertTrue("'" + str2 + "' != '" + "{78,}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}Fhi!{79,36}" + "'", str2.equals("{78,}<98-23>F{78,}F{78,}<98-23>F{78,}F{78,}Fhi!{79,36}"));
     }
 }
-

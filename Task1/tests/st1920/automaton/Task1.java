@@ -84,26 +84,26 @@ public class Task1 {
     public void testTask1_15() {
         assertTrue(RegExpMatcher.matches("abcdefg", "abcdefg"));
     }
-    
-	@Test
-	public void testTask1_16() {
-		String regex = "([a-zA-Z0-9])+\\@([a-zA-Z0-9])+\\.([a-z]){2,3}";
-		assertTrue(RegExpMatcher.matches("user@email.com", regex));
-	}
-	
-	@Test 
-	public void testTask1_17() {
-		assertTrue(RegExpMatcher.matches("nickname2021", "nickname[0-9]+"));
-	}
-	
-	@Test
-	public void testTask1_18() {
-		assertFalse(RegExpMatcher.matches("hellohellohello", "hello?"));
-	}
-	
-	
-	@Test
-	public void testTask_19() {
-		assertTrue(RegExpMatcher.matches("123", "\"123\""));
-	}
+
+  	@Test
+  	public void testTask1_16() {
+  		String regex = "([a-zA-Z0-9])+\\@([a-zA-Z0-9])+\\.([a-z]){2,3}";
+  		assertTrue(RegExpMatcher.matches("user@email.com", regex));
+  	}
+  	
+  	@Test
+  	public void testTask1_17() {
+  		assertTrue(RegExpMatcher.matches("nickname2021", "nickname[0-9]+"));
+  	}
+
+  	@Test
+  	public void testTask1_18() {
+  		assertFalse(RegExpMatcher.matches("hellohellohello", "hello?"));
+  	}
+
+
+  	@Test
+  	public void testTask_19() {
+  		assertTrue(RegExpMatcher.matches("123", "\"123\""));
+  	}
 }
