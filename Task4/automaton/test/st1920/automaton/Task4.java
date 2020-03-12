@@ -82,4 +82,14 @@ public class Task4 {
 	public void surroundingWords() {
 		assertTrue(RegExpMatcher.matches("\n\raaa.b\r\n", "$$a+.[a-z]${2,}"));
 	}
+	
+	@Test
+	public void negation() {
+		assertFalse(RegExpMatcher.matches("\r\n", "~$"));
+	}
+	
+	@Test
+	public void doubleNegation() {
+		assertTrue(RegExpMatcher.matches("\r", "~~$"));
+	}
 }
