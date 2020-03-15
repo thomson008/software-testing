@@ -1,166 +1,166 @@
 diff --git a/MatchString.java b/MatchString.java
-deleted file mode 100644
-index f92ea95..0000000
---- a/MatchString.java
-+++ /dev/null
-@@ -1,13 +0,0 @@
--package st1920.automaton;
--
--public class MatchString {
--	private String string;
--
--	public MatchString(String string) {
--		this.string = string;
--	}
--
--	public String getString() {
--		return string;
--	}
--}
+new file mode 100644
+index 0000000..f92ea95
+--- /dev/null
++++ b/MatchString.java
+@@ -0,0 +1,13 @@
++package st1920.automaton;
++
++public class MatchString {
++	private String string;
++
++	public MatchString(String string) {
++		this.string = string;
++	}
++
++	public String getString() {
++		return string;
++	}
++}
 diff --git a/MatcherWrapper.java b/MatcherWrapper.java
-deleted file mode 100644
-index 77b06ee..0000000
---- a/MatcherWrapper.java
-+++ /dev/null
-@@ -1,122 +0,0 @@
--package st1920.automaton;
--
--import java.util.Random;
--
--public class MatcherWrapper {
--    public static boolean matches(MatchString m, REString re) {
--        return RegExpMatcher.matches(m.getString(), re.getRegex());
--    }
--
--    // Methods for generating RegExp strings
--    public static REString makeDigit() {
--    	return new REString("8");
--    }
--
--    public static REString makeConcatenation(REString pattern1, REString pattern2) {
--    	return new REString(pattern1.getRegex() + pattern2.getRegex());
--    }
--
--    public static REString makeRangeOfOccurences(REString pattern) {
--    	return new REString(pattern.getRegex() + "{3, 11}");
--    }
--
--    public static REString makeAnd(REString pattern1, REString pattern2) {
--    	return new REString(pattern1.getRegex() + "&" + pattern2.getRegex());
--    }
--
--    public static REString makeRepeatZeroOrOne(REString regExp) {
--        return new REString(regExp.getRegex() + "?");
--    }
--
--    public static REString makeOr(REString pattern1, REString pattern2) {
--        return new REString(pattern1.getRegex() + "|" + pattern2.getRegex());
--    }
--
--    public static REString makeLetterRange() {
--        return new REString("[a-zA-z]");
--    }
--
--    public static REString makeEntireString() {
--    	return new REString("\"aaa\"");
--    }
--
--    public static REString makeAnyString() {
--    	return new REString("@");
--    }
--
--    public static REString makeNoneString() {
--    	return new REString("#");
--    }
--
--    public static REString makeRepeatOnceOrMore(REString pattern) {
--        return new REString(pattern.getRegex() + "+");
--    }
--
--    public static REString makeRepeatZeroOrMore(REString pattern) {
--        return new REString(pattern.getRegex() + "*");
--    }
--
--    public static REString makeNegation(REString pattern) {
--        return new REString("~" + pattern.getRegex());
--    }
--
--    public static REString makeNumberRange() {
--    	return new REString("<4-17>");
--    }
--
--    public static REString makeWildcard() {
--    	return new REString(".");
--    }
--    
--    public static REString makeSpecialCharacter() {
--    	return new REString("\\%");
--    }
--    
--	public static REString makeAlpha() {
--		Random rnd = new Random();
--		final String alphanum = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
--	    return new REString(Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length()))));
--	}
--	public static REString makeSpecial() {
--		Random rnd = new Random();
--		final String alphanum = "!@#$%^&*+?";
--		return new REString(Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length()))));
--	}
--	public static REString makeRange() {
--		Random rnd = new Random();
--		return new REString(String.format("<%d-%d>", rnd.nextInt(100), rnd.nextInt(100)));
--	}
--	public static REString makeRepeat1() {
--		Random rnd = new Random();
--		return new REString(String.format("{%d,%d}", rnd.nextInt(100), rnd.nextInt(100)));
--	}
--	public static REString makeRepeat2() {
--		Random rnd = new Random();
--		return new REString(String.format("{%d,}", rnd.nextInt(100)));
--	}
--	public static REString makeRepeat3() {
--		Random rnd = new Random();
--		return new REString(String.format("{%d}", rnd.nextInt(100)));
--	}
--
--	public static REString makeConcatenation(String l, String r) {
--		return new REString(l + r);
--	}
--
--    // Methods for generating standard match strings
--    public static MatchString makeAlphabet() {
--    	return new MatchString("a");
--    }
--
--    public static MatchString makeNum() {
--    	return new MatchString("8");
--    }
--
--    public static MatchString makeConcatenation(MatchString l, MatchString r) {
--    	return new MatchString(l.getString() + r.getString());
--    }
--    
--    public static MatchString makeSpecialChar() {
--    	return new MatchString("%");
--    }
--}
+new file mode 100644
+index 0000000..77b06ee
+--- /dev/null
++++ b/MatcherWrapper.java
+@@ -0,0 +1,122 @@
++package st1920.automaton;
++
++import java.util.Random;
++
++public class MatcherWrapper {
++    public static boolean matches(MatchString m, REString re) {
++        return RegExpMatcher.matches(m.getString(), re.getRegex());
++    }
++
++    // Methods for generating RegExp strings
++    public static REString makeDigit() {
++    	return new REString("8");
++    }
++
++    public static REString makeConcatenation(REString pattern1, REString pattern2) {
++    	return new REString(pattern1.getRegex() + pattern2.getRegex());
++    }
++
++    public static REString makeRangeOfOccurences(REString pattern) {
++    	return new REString(pattern.getRegex() + "{3, 11}");
++    }
++
++    public static REString makeAnd(REString pattern1, REString pattern2) {
++    	return new REString(pattern1.getRegex() + "&" + pattern2.getRegex());
++    }
++
++    public static REString makeRepeatZeroOrOne(REString regExp) {
++        return new REString(regExp.getRegex() + "?");
++    }
++
++    public static REString makeOr(REString pattern1, REString pattern2) {
++        return new REString(pattern1.getRegex() + "|" + pattern2.getRegex());
++    }
++
++    public static REString makeLetterRange() {
++        return new REString("[a-zA-z]");
++    }
++
++    public static REString makeEntireString() {
++    	return new REString("\"aaa\"");
++    }
++
++    public static REString makeAnyString() {
++    	return new REString("@");
++    }
++
++    public static REString makeNoneString() {
++    	return new REString("#");
++    }
++
++    public static REString makeRepeatOnceOrMore(REString pattern) {
++        return new REString(pattern.getRegex() + "+");
++    }
++
++    public static REString makeRepeatZeroOrMore(REString pattern) {
++        return new REString(pattern.getRegex() + "*");
++    }
++
++    public static REString makeNegation(REString pattern) {
++        return new REString("~" + pattern.getRegex());
++    }
++
++    public static REString makeNumberRange() {
++    	return new REString("<4-17>");
++    }
++
++    public static REString makeWildcard() {
++    	return new REString(".");
++    }
++    
++    public static REString makeSpecialCharacter() {
++    	return new REString("\\%");
++    }
++    
++	public static REString makeAlpha() {
++		Random rnd = new Random();
++		final String alphanum = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
++	    return new REString(Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length()))));
++	}
++	public static REString makeSpecial() {
++		Random rnd = new Random();
++		final String alphanum = "!@#$%^&*+?";
++		return new REString(Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length()))));
++	}
++	public static REString makeRange() {
++		Random rnd = new Random();
++		return new REString(String.format("<%d-%d>", rnd.nextInt(100), rnd.nextInt(100)));
++	}
++	public static REString makeRepeat1() {
++		Random rnd = new Random();
++		return new REString(String.format("{%d,%d}", rnd.nextInt(100), rnd.nextInt(100)));
++	}
++	public static REString makeRepeat2() {
++		Random rnd = new Random();
++		return new REString(String.format("{%d,}", rnd.nextInt(100)));
++	}
++	public static REString makeRepeat3() {
++		Random rnd = new Random();
++		return new REString(String.format("{%d}", rnd.nextInt(100)));
++	}
++
++	public static REString makeConcatenation(String l, String r) {
++		return new REString(l + r);
++	}
++
++    // Methods for generating standard match strings
++    public static MatchString makeAlphabet() {
++    	return new MatchString("a");
++    }
++
++    public static MatchString makeNum() {
++    	return new MatchString("8");
++    }
++
++    public static MatchString makeConcatenation(MatchString l, MatchString r) {
++    	return new MatchString(l.getString() + r.getString());
++    }
++    
++    public static MatchString makeSpecialChar() {
++    	return new MatchString("%");
++    }
++}
 diff --git a/REString.java b/REString.java
-deleted file mode 100644
-index 06e1201..0000000
---- a/REString.java
-+++ /dev/null
-@@ -1,13 +0,0 @@
--package st1920.automaton;
--
--public class REString {
--    private String regex;
--
--    public REString(String re) {
--        regex = re;
--    }
--
--    public String getRegex() {
--    	return regex;
--    }
--}
+new file mode 100644
+index 0000000..06e1201
+--- /dev/null
++++ b/REString.java
+@@ -0,0 +1,13 @@
++package st1920.automaton;
++
++public class REString {
++    private String regex;
++
++    public REString(String re) {
++        regex = re;
++    }
++
++    public String getRegex() {
++    	return regex;
++    }
++}
