@@ -1,0 +1,7 @@
+advantanges
+1. quick to start, can start from a class to generate hundreds of tests
+2. have to intention, can generate tests that are not easily considered by human 
+
+disadvantage
+1. need detailed configuration and helper functions to test boudary conditions 
+2. generated code maybe not readable and thus not easy to manage
