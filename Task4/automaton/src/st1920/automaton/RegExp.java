@@ -494,10 +494,7 @@ public class RegExp {
 	}
 	
 	private static RegExp makeNewline() {
-		RegExp newlineWindows = makeString("\r\n");
-		RegExp newlineUnix = makeString("\n");
-		RegExp newlineMac = makeString("\r");
-		return makeUnion(makeUnion(newlineMac, newlineUnix), newlineWindows);
+		return makeUnion(makeUnion(makeString("\r"), makeString("\n")), makeString("\r\n"));
 	}
 
 	private boolean peek(String s) {
