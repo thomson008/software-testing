@@ -98,30 +98,14 @@ index 0000000..77b06ee
 +    }
 +    
 +	public static REString makeAlpha() {
-+		Random rnd = new Random();
-+		final String alphanum = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-+	    return new REString(Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length()))));
++	    return new REString("a");
 +	}
-+	public static REString makeSpecial() {
-+		Random rnd = new Random();
-+		final String alphanum = "!@#$%^&*+?";
-+		return new REString(Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length()))));
-+	}
-+	public static REString makeRange() {
-+		Random rnd = new Random();
-+		return new REString(String.format("<%d-%d>", rnd.nextInt(100), rnd.nextInt(100)));
-+	}
-+	public static REString makeRepeat1() {
-+		Random rnd = new Random();
-+		return new REString(String.format("{%d,%d}", rnd.nextInt(100), rnd.nextInt(100)));
-+	}
++
 +	public static REString makeRepeat2() {
-+		Random rnd = new Random();
-+		return new REString(String.format("{%d,}", rnd.nextInt(100)));
++		return new REString("{3,}");
 +	}
 +	public static REString makeRepeat3() {
-+		Random rnd = new Random();
-+		return new REString(String.format("{%d}", rnd.nextInt(100)));
++		return new REString("{5}");
 +	}
 +
 +	public static REString makeConcatenation(String l, String r) {
