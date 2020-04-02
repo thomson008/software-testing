@@ -1,7 +1,5 @@
 package st1920.automaton;
 
-import java.util.Random;
-
 public class MatcherWrapper {
     public static boolean matches(MatchString m, REString re) {
         return RegExpMatcher.matches(m.getString(), re.getRegex());
@@ -16,8 +14,8 @@ public class MatcherWrapper {
     	return new REString(pattern1.getRegex() + pattern2.getRegex());
     }
 
-    public static REString makeRangeOfOccurences(REString pattern) {
-    	return new REString(pattern.getRegex() + "{3, 11}");
+    public static REString makeRangeOfOccurences() {
+    	return new REString("{3, 11}");
     }
 
     public static REString makeAnd(REString pattern1, REString pattern2) {
@@ -73,30 +71,14 @@ public class MatcherWrapper {
     }
     
 	public static REString makeAlpha() {
-		Random rnd = new Random();
-		final String alphanum = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	    return new REString(Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length()))));
+	    return new REString("a");
 	}
-	public static REString makeSpecial() {
-		Random rnd = new Random();
-		final String alphanum = "!@#$%^&*+?";
-		return new REString(Character.toString(alphanum.charAt(rnd.nextInt(alphanum.length()))));
-	}
-	public static REString makeRange() {
-		Random rnd = new Random();
-		return new REString(String.format("<%d-%d>", rnd.nextInt(100), rnd.nextInt(100)));
-	}
-	public static REString makeRepeat1() {
-		Random rnd = new Random();
-		return new REString(String.format("{%d,%d}", rnd.nextInt(100), rnd.nextInt(100)));
-	}
+
 	public static REString makeRepeat2() {
-		Random rnd = new Random();
-		return new REString(String.format("{%d,}", rnd.nextInt(100)));
+		return new REString("{3,}");
 	}
 	public static REString makeRepeat3() {
-		Random rnd = new Random();
-		return new REString(String.format("{%d}", rnd.nextInt(100)));
+		return new REString("{5}");
 	}
 
 	public static REString makeConcatenation(String l, String r) {
