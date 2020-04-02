@@ -95,5 +95,20 @@ public class Task3_2 {
     public void testTask3_2_18() {
         assertFalse(RegExpMatcher.matches("a", "<0-1>"));
     }
-
+    
+    @Test
+    public void testTask3_2_19() {
+        assertFalse(RegExpMatcher.matches("aa",
+        	"a+ & a* & a & a{1,} & a{1,5} & a{1,7} & a{2,8} | a{6,8} & b{5} | a | b | c & ccc c {1,2} "));
+    }
+    
+    @Test
+    public void testTask3_2_20() {
+        assertFalse(RegExpMatcher.matches("a", "\"a\"{1} & \"a\"{1}"));
+    }
+    
+    @Test
+    public void testTask3_2_21() {
+        assertFalse(RegExpMatcher.matches("a", "\"a\" & \"a\" {1}"));
+    }
 }

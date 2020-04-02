@@ -109,6 +109,11 @@ public class Task3_all {
 	public void testTask1_19() {
 		assertTrue(RegExpMatcher.matches("123", "\"123\""));
 	}
+  	
+	@Test
+	public void testTask1_20() {
+		assertTrue(RegExpMatcher.matches("42", "<0-50>"));
+	}
 
 	@Test
 	public void testTask3_2_01() {
@@ -199,6 +204,22 @@ public class Task3_all {
 	public void testTask3_2_18() {
 		assertFalse(RegExpMatcher.matches("a", "<0-1>"));
 	}
+	
+    @Test
+    public void testTask3_2_19() {
+        assertFalse(RegExpMatcher.matches("aa",
+        	"a+ & a* & a & a{1,} & a{1,5} & a{1,7} & a{2,8} | a{6,8} & b{5} | a | b | c & ccc c {1,2} "));
+    }
+    
+    @Test
+    public void testTask3_2_20() {
+        assertFalse(RegExpMatcher.matches("a", "\"a\"{1} & \"a\"{1}"));
+    }
+    
+    @Test
+    public void testTask3_2_21() {
+        assertFalse(RegExpMatcher.matches("a", "\"a\" & \"a\" {1}"));
+    }
 
 	public static boolean debug = false;
 

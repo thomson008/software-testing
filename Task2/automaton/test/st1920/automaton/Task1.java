@@ -1,3 +1,5 @@
+package st1920.automaton;
+
 import org.junit.Test;
 import st1920.automaton.RegExpMatcher;
 import static org.junit.Assert.assertFalse;
@@ -14,6 +16,7 @@ public class Task1 {
     public void testTask1_02() {
         assertFalse(RegExpMatcher.matches("a", ""));
     }
+	
 
     @Test
     public void testTask1_03() {
@@ -58,6 +61,7 @@ public class Task1 {
         assertFalse(RegExpMatcher.matches("86420", "a"));
     }
 
+	
     @Test
     public void testTask1_11() {
         assertTrue(RegExpMatcher.matches("", ".?"));
@@ -103,4 +107,9 @@ public class Task1 {
   	public void testTask1_19() {
   		assertTrue(RegExpMatcher.matches("123", "\"123\""));
   	}
+  	
+	@Test
+	public void testTask1_20() {
+		assertTrue(RegExpMatcher.matches("42", "<0-50>"));
+	}
 }

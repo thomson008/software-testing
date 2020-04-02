@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Randoop"/>
+	<classpathentry kind="src" path="Task2/automaton/src"/>
+	<classpathentry kind="src" path="Task2/automaton/test"/>
+	<classpathentry kind="src" path="Task3/automaton/src"/>
+	<classpathentry kind="src" path="Task3/automaton/test"/>
+	<classpathentry kind="src" path="Task4/automaton/src"/>
+	<classpathentry kind="src" path="Task4/automaton/test"/>
+	<classpathentry kind="lib" path="Task3/automaton/target/automaton-1.12-2.jar"/>
+	<classpathentry kind="output" path="Task2/automaton/build"/>
+</classpath>
