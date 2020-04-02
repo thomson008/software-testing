@@ -25,8 +25,6 @@ index 0000000..77b06ee
 @@ -0,0 +1,122 @@
 +package st1920.automaton;
 +
-+import java.util.Random;
-+
 +public class MatcherWrapper {
 +    public static boolean matches(MatchString m, REString re) {
 +        return RegExpMatcher.matches(m.getString(), re.getRegex());
