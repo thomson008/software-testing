@@ -39,8 +39,8 @@ index 0000000..77b06ee
 +    	return new REString(pattern1.getRegex() + pattern2.getRegex());
 +    }
 +
-+    public static REString makeRangeOfOccurences(REString pattern) {
-+    	return new REString(pattern.getRegex() + "{3, 11}");
++    public static REString makeRangeOfOccurences() {
++    	return new REString("{3, 11}");
 +    }
 +
 +    public static REString makeAnd(REString pattern1, REString pattern2) {
